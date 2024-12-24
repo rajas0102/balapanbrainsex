@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>brainsex boys</title>
+  <title>Game Balapan Zaki vs Dio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,11 +23,11 @@
       width: 50px;
       height: 50px;
     }
-    #zaki icikiwir {
+    #zaki {
       top: 50px;
       left: 0;
     }
-    #dio reptil {
+    #dio {
       top: 120px;
       left: 0;
     }
@@ -39,35 +39,35 @@
   </style>
 </head>
 <body>
-  <h1>brainsex boys</h1>
+  <h1>Game Balapan Zaki vs Dio</h1>
   <div class="track">
-    <img id="zaki icikiwir" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/dio%20reptil.png?raw=true" alt="Zaki icikiwir">
-    <img id="dio reptil" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/zaki%20icikiwir.png?raw=true" alt="Dio reptil">
+    <img id="zaki" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/zaki.png?raw=true" alt="Zaki">
+    <img id="dio" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/dio.png?raw=true" alt="Dio">
   </div>
   <button onclick="startRace()">Mulai Balapan</button>
   <script>
     // Fungsi untuk memulai balapan
     function startRace() {
-      var zaki = document.getElementById("zaki icikiwir");
-      var dio = document.getElementById("dio reptil");
+      var zaki = document.getElementById("zaki");
+      var dio = document.getElementById("dio");
       var finishLine = document.querySelector(".track").offsetWidth - 50; // Garis akhir
       var zakiPosition = 0;
       var dioPosition = 0;
 
       // Interval balapan
       var raceInterval = setInterval(function() {
-        zakiicikiwirPosition += Math.random() * 10;
-        dioreptilPosition += Math.random() * 10;
+        zakiPosition += Math.random() * 10;
+        dioPosition += Math.random() * 10;
 
-        zakiicikiwir.style.left = zakiicikiwirPosition + "px";
-        dioreptil.style.left = dioreptilPosition + "px";
+        zaki.style.left = zakiPosition + "px";
+        dio.style.left = dioPosition + "px";
 
-        if (zakiicikiwirPosition >= finishLine || dioreptilPosition >= finishLine) {
+        if (zakiPosition >= finishLine || dioPosition >= finishLine) {
           clearInterval(raceInterval);
-          if (zakiicikiwirPosition > dioreptilPosition) {
+          if (zakiPosition > dioPosition) {
             alert("Zaki menang!");
-          } else if (dioreptilPosition > zakiicikiwirPosition) {
-            alert("Dio reptil menang!");
+          } else if (dioPosition > zakiPosition) {
+            alert("Dio menang!");
           } else {
             alert("Seri!");
           }
