@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Balapan Zaki vs Dio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+    .track {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #000;
+      background-color: #ddd;
+    }
+    .character {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+    }
+    #zaki {
+      top: 50px;
+      left: 0;
+    }
+    #dio {
+      top: 120px;
+      left: 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Game Balapan Zaki vs Dio</h1>
+  <div class="track">
+    <img id="zaki" class="character" src="images/zaki.png" alt="Zaki">
+    <img id="dio" class="character" src="images/dio.png" alt="Dio">
+  </div>
+  <button onclick="startRace()">Mulai Balapan</button>
+  <script>
+    // Fungsi untuk memulai balapan
+    function startRace() {
+      var zaki = document.getElementById("zaki");
+      var dio = document.getElementById("dio");
+      var finishLine = document.querySelector(".track").offsetWidth - 50; // Garis akhir
+      var zakiPosition = 0;
+      var dioPosition = 0;
+
+      // Interval balapan
+      var raceInterval = setInterval(function() {
+        zakiPosition += Math.random() * 10;
+        dioPosition += Math.random() * 10;
+
+        zaki.style.left = zakiPosition + "px";
+        dio.style.left = dioPosition + "px";
+
+        if (zakiPosition >= finishLine || dioPosition >= finishLine) {
+          clearInterval(raceInterval);
+          if (zakiPosition > dioPosition) {
+            alert("Zaki menang!");
+          } else if (dioPosition > zakiPosition) {
+            alert("Dio menang!");
+          } else {
+            alert("Seri!");
+          }
+        }
+      }, 100);
+    }
+  </script>
+</body>
+</html>
