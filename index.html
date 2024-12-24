@@ -23,11 +23,11 @@
       width: 50px;
       height: 50px;
     }
-    #zaki {
+    #zaki icikiwir {
       top: 50px;
       left: 0;
     }
-    #dio {
+    #dio reptil {
       top: 120px;
       left: 0;
     }
@@ -41,33 +41,33 @@
 <body>
   <h1>brainsex boys</h1>
   <div class="track">
-    <img id="zaki" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/dio%20reptil.png?raw=true" alt="Zaki icikiwir">
-    <img id="dio" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/zaki%20icikiwir.png?raw=true" alt="Dio reptil">
+    <img id="zaki icikiwir" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/dio%20reptil.png?raw=true" alt="Zaki icikiwir">
+    <img id="dio reptil" class="character" src="https://github.com/rajas0102/balapanbrainsex/blob/main/zaki%20icikiwir.png?raw=true" alt="Dio reptil">
   </div>
   <button onclick="startRace()">Mulai Balapan</button>
   <script>
     // Fungsi untuk memulai balapan
     function startRace() {
-      var zaki = document.getElementById("zaki");
-      var dio = document.getElementById("dio");
+      var zaki = document.getElementById("zaki icikiwir");
+      var dio = document.getElementById("dio reptil");
       var finishLine = document.querySelector(".track").offsetWidth - 50; // Garis akhir
       var zakiPosition = 0;
       var dioPosition = 0;
 
       // Interval balapan
       var raceInterval = setInterval(function() {
-        zakiPosition += Math.random() * 10;
-        dioPosition += Math.random() * 10;
+        zakiicikiwirPosition += Math.random() * 10;
+        dioreptilPosition += Math.random() * 10;
 
-        zaki.style.left = zakiPosition + "px";
-        dio.style.left = dioPosition + "px";
+        zakiicikiwir.style.left = zakiicikiwirPosition + "px";
+        dioreptil.style.left = dioreptilPosition + "px";
 
-        if (zakiPosition >= finishLine || dioPosition >= finishLine) {
+        if (zakiicikiwirPosition >= finishLine || dioreptilPosition >= finishLine) {
           clearInterval(raceInterval);
-          if (zakiPosition > dioPosition) {
+          if (zakiicikiwirPosition > dioreptilPosition) {
             alert("Zaki menang!");
-          } else if (dioPosition > zakiPosition) {
-            alert("Dio menang!");
+          } else if (dioreptilPosition > zakiicikiwirPosition) {
+            alert("Dio reptil menang!");
           } else {
             alert("Seri!");
           }
